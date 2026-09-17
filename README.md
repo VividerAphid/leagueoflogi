@@ -1,2 +1,2 @@
-# leagueoflogi
-A terrible mashup of foxhole and league of legends
+# League of Logi
+A terrible mashup of Foxhole and League of Legends
