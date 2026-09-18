@@ -2,6 +2,7 @@ const express = require('express');
 const { createServer } = require('node:http');
 const { join } = require('node:path');
 const { Server } = require('socket.io');
+const mainKit  = require('./js/mainServerSide.js');
 const port = 23115;
 
 const app = express();
@@ -26,12 +27,13 @@ const options = {
   }
 }
 
-
 app.use(express.static(join(__dirname, "js"), options));
 app.use(express.static(join(__dirname, "css"), options));
 app.get('/', (req, res) => {
   res.sendFile(join(__dirname, 'index.html'));
 });
+
+var gameInst = mainKit.initGame();
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -44,5 +46,7 @@ server.listen(port, () => {
 
 
 function handleJoin(socket, io){
-  //do the join stuff here
+  let name = Math.floor(Math.random()*100000);
+  gameInst.initPlayer(name, 1, 10, 10);
+  io.emit("testData", gameInst.players);
 }

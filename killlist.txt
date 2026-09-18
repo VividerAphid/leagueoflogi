@@ -1,0 +1,29 @@
+<uncommitted>
+ -Weapons T1-T3
+    -Higher tier better damage / fire rate
+ -Tools T1-T3
+    -Higher tier faster build / better harvest
+ -4 Resource types
+    -Rock
+    -Fiber
+    -Chemical
+    -Metal
+ -Tech resource in mid
+ -2 pillbox types
+ -sandbag wall
+ -trench
+ -8 (9) Buildings
+   -Home Base: Main base for a team, spawns up to 20 units per lane on the map
+   -Base: Bases found in each lane, spawns up to 20 units per lane
+      -In the event the next forward base is captured, spawns up to 10 units instead
+   -Garage: Existing structure in spawn area, meant for building freight trucks and scout cars
+   -Factory: Existing structure where all items are produced
+   -Refinery: Existing structure where resources are converted into usable materials
+   -Tech Lab: Existing structure where tech materials are brought to unlock new tech
+   -Warehouse: Forward storage buildings that both players and minion units can pull from to deliver supplies to Bases
+   -Workers Quarters: Buildable on any facility or resource node to spawn a worker unit to automate tasks
+   -Vehicle Factory: Buildable in any lane to send vehicles forward to the frontline as long as materials are available to build with
+ -vehicles
+   -Tank: Combat vehicle for clearing infantry and structures
+   -Freight truck: Shipping vehicle for carrying large quantities of materials and supplies
+   -scout car: Fast infantry vehicle with small storage capacity for recon / scouting missions
