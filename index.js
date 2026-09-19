@@ -3,6 +3,7 @@ const { createServer } = require('node:http');
 const { join } = require('node:path');
 const { Server } = require('socket.io');
 const mainKit  = require('./js/mainServerSide.js');
+const nameKit = require('./js/nameKit.js');
 const port = 23115;
 
 const app = express();
@@ -46,7 +47,9 @@ server.listen(port, () => {
 
 
 function handleJoin(socket, io){
-  let name = Math.floor(Math.random()*100000);
-  gameInst.initPlayer(name, 1, 10, 10);
-  io.emit("testData", gameInst.players);
+  let name = nameKit.getName(false);
+  let x = Math.floor(Math.random()*gameInst.width);
+  let y = Math.floor(Math.random()*gameInst.height);
+  gameInst.initPlayer(name, 1, x, y);
+  io.emit("testData", gameInst);
 }
