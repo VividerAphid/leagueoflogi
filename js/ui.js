@@ -22,16 +22,18 @@ function updateCanvasDimensions(gameIns){
 // }
 
 function render(){
-    var radius = 50;
-    var x = two.width * 0.5;
-    var y = two.height * 0.5 - radius * 1.25;
-    var circle = two.makeCircle(x, y, radius);
-    y = two.height * 0.5 + radius * 1.25;
-    // The object returned has many stylable properties:
-    circle.fill = '#FF8000';
+    // var radius = 10;
+    // var x = two.width * 0.5;
+    // var y = two.height * 0.5 - radius * 1.25;
+    // var circle = two.makeCircle(x, y, radius);
+    // var circle2 = two.makeCircle(y, x, radius);
+    // //y = two.height * 0.5 + radius * 1.25;
+    // // The object returned has many stylable properties:
+    // circle.fill = '#FF8000';
+    // circle2.fill = "#00FF00";
     // And accepts all valid CSS color:
-    circle.stroke = 'orangered';
-    circle.linewidth = 5;
+    //circle.stroke = 'orangered';
+    //circle.linewidth = 5;
     // Don’t forget to tell two to draw everything to the screen
     two.update();
 }

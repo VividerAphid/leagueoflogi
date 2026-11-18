@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 });
 
 var gameInst = mainKit.initGame();
+var lastTeamPicked = 0;
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -48,8 +49,14 @@ server.listen(port, () => {
 
 function handleJoin(socket, io){
   let name = nameKit.getName(false);
-  let x = Math.floor(Math.random()*gameInst.width);
+  let x = Math.floor(Math.random()*gameInst.width/2 + lastTeamPicked*gameInst.width/2);
   let y = Math.floor(Math.random()*gameInst.height);
-  gameInst.initPlayer(name, 1, x, y);
+  gameInst.initPlayer(name, lastTeamPicked, x, y);
+  if(lastTeamPicked == 1){
+    lastTeamPicked = 0;
+  }
+  else{
+    lastTeamPicked = 1;
+  }
   io.emit("testData", gameInst);
 }

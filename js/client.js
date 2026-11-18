@@ -16,6 +16,16 @@ var two = new Two({
 function loadPlayersTest(data){
     console.log("loading");
     gameinst = data;
-    //updateCanvasDimensions(data);
+    loadGameObjects();
     render();
+    //updateCanvasDimensions(data);
+}
+
+function loadGameObjects(){
+    gameinst.gameObjects = [];
+    for(let r = 0; r < gameinst.players.length; r++){
+        let temp = two.makeCircle(gameinst.players[r].x, gameinst.players[r].y, 10);
+        temp.fill = gameinst.teams[gameinst.players[r].team].color;
+        gameinst.gameObjects.push(temp);
+    }
 }
